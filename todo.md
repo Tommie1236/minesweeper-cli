@@ -4,7 +4,10 @@ Main game requirements
  - [x] board class (create a board and populate with mines)
  - [ ] cli-ui (probably curses)  
  - [ ] implement cursor movement (highlighted cell) wasd, arrows
- - [ ] marked_flag state Square
+ - [x] use right arrow as optional confirm
+ - [x] marked_flag state Square
+ - [ ] settings window (difficulties)
+ - [ ] game window
  - [ ] mark a square with with Q or Enter
  - [ ] dig a square with E or Shift
  - [ ] game over if a dug square is a mine
@@ -15,7 +18,7 @@ Main game requirements
  - [ ] difficulty settings (defaults with size/amount of mines)
 
 Extra's
- - [ ] custom mode (user specifies board size and amoun of mines)
+ - [ ] custom mode (user specifies board size and amount/percentage of mines)
  - [ ] game timer
  - [ ] scoring system (amount of clicks?)
  - [ ] mine revealing animation

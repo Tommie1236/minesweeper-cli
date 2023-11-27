@@ -2,9 +2,6 @@ import random
 from typing import Any
 
 from termcolor import colored
-from pprint import PrettyPrinter
-
-pp = PrettyPrinter()
 
 
 
@@ -19,35 +16,72 @@ COLORS = {
     7: 'red',
     8: 'red'
 }
+class Square_State:
+    MARKED = 'M'
+    REVEALED = 'R'
+    HIDDEN = 'H'
+
 class Square:
-# minesweeper board square    
+# minesweeper board square
 
     def __init__(self, x:int, y:int):
         self._x = x
         self._y = y
         self._is_mine = False
         self._mines_around = 0
+        self._is_marked = False
+        self._is_revealed = False
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "X" if self._is_mine else colored(str(self._mines_around), COLORS[self._mines_around])
 
-    def __str__(self):
+    def __str__(self) -> str:
         return "X" if self._is_mine else colored(str(self._mines_around), COLORS[self._mines_around])
 
-    def set_mine(self):
+    def set_mine(self) -> bool:
         self._is_mine = True
+        return self._is_mine
 
-    def is_mine(self):
+    def is_mine(self) -> bool:
         return self._is_mine
     
-    def add_mine(self):
+    def add_mine(self) -> int:
         self._mines_around += 1
+        return self._mines_around
 
-    def get_mines_around(self):
+    def get_mines_around(self) -> int:
         return self._mines_around
     
-    def get_coords(self):
+    def get_coords(self) -> tuple[int, int]:
         return self._x, self._y
+    
+    def mark(self) -> bool:
+        self._is_marked = True
+        return self._is_marked
+
+    def reveal(self) -> bool:
+        self._is_revealed = True
+        return self._is_revealed
+
+    def is_revealed(self) -> tuple[bool, int]:
+        return self._is_revealed, self._mines_around
+    
+    def is_marked(self) -> bool:
+        return self._is_marked
+    
+    def get_state(self):
+
+        if self._is_revealed:
+            return Square_State.REVEALED
+        elif self._is_marked:
+            return Square_State.MARKED
+        else:
+            return Square_State.HIDDEN
+
+    def dig(self) -> tuple[bool, int]:
+        # dig the square
+        self._is_revealed = True
+        return self._is_mine, self._mines_around
 
 
 class Board:
