@@ -1,0 +1,7 @@
+┌──────────────┐
+│   CONTROLS   │
+│↑ Cursor Up   │
+│↓ Cursor Down │
+│→ Select      │
+│← Back        │
+└──────────────┘

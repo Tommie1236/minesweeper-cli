@@ -4,6 +4,7 @@ Main game requirements
  - [x] board class (create a board and populate with mines)
  - [ ] cli-ui (probably curses)  
  - [ ] implement cursor movement (highlighted cell) wasd, arrows
+ - [x] remember selected menu index
  - [x] use right arrow as optional confirm
  - [x] marked_flag state Square
  - [ ] settings window (difficulties)
@@ -23,3 +24,5 @@ Extra's
  - [ ] scoring system (amount of clicks?)
  - [ ] mine revealing animation
  - [ ] mine boom explosion animation
+ - [ ] color settings
+ - [ ] dynamic scaling
