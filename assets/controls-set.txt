@@ -3,5 +3,5 @@
 │↑ Cursor Up   │
 │↓ Cursor Down │
 │→ Select      │
-│← Exit        │
+│← Back        │
 └──────────────┘

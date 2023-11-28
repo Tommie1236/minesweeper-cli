@@ -1,7 +1,6 @@
 from minesweeper import Board
 from curses import wrapper
 import curses
-import time
 import sys
 
 
